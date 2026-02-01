@@ -323,14 +323,32 @@ footer{text-align:center;padding:25px 0;color:#555;border-top:1px solid rgba(255
 <li><strong>Monthly/Board:</strong> YoY growth, strategic picture</li>
 </ul>
 
-<h3>9. ⏱️ Data Freshness</h3>
+<h3>9. 📅 Calendar Comparisons (What to Compare to What)</h3>
+<ul>
+<li><strong>Daily:</strong> Compare to <strong>same day last week</strong>, not yesterday
+  <ul>
+    <li>Tuesday vs last Tuesday — both have similar weekday behavior</li>
+    <li>Exception: After a big event (sale launch), compare to yesterday for immediate impact</li>
+  </ul>
+</li>
+<li><strong>Weekly:</strong> Mon-Sun vs previous Mon-Sun (WoW), plus same week last year</li>
+<li><strong>Monthly:</strong> This month vs last month (MoM), plus same month last year (YoY)</li>
+<li><strong>Rolling periods:</strong> Last 7/30 days vs previous 7/30 days — smooths calendar quirks</li>
+</ul>
+<div class="tip"><strong>The Holiday Problem:</strong> Easter/Black Friday move dates yearly. Compare by event or week number, not calendar date. Tag events in annotations.</div>
+<ul>
+<li><strong>Day-of-week normalization:</strong> If comparing months, check # of Saturdays (usually your best day)</li>
+<li><strong>The Rule:</strong> Short-term (ops) = WoW • Long-term (strategy) = YoY • Never just MoM alone (too noisy)</li>
+</ul>
+
+<h3>10. ⏱️ Data Freshness</h3>
 <ul>
 <li>Update frequency matters for different decisions</li>
 <li>Real-time for operations, daily for strategy</li>
 <li>Always show "last updated" timestamp (top of this dashboard)</li>
 </ul>
 
-<h3>10. 📊 One Source of Truth</h3>
+<h3>11. 📊 One Source of Truth</h3>
 <ul>
 <li>Everyone looks at the same dashboard</li>
 <li>No conflicting spreadsheets floating around</li>
