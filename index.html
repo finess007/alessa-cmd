@@ -82,6 +82,17 @@ body.edit-mode .sortable-section{border:2px dashed rgba(108,92,231,0.3);border-r
 .annotation-item:last-child{border-bottom:none}
 .annotation-date{color:#6c5ce7;font-weight:500}
 .leading-indicators{background:linear-gradient(135deg,#1e1e2f,#2d2d44);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.08)}
+/* Best Practices */
+.best-practices{background:linear-gradient(135deg,#0d0d15,#151525);border-radius:12px;padding:25px;border:1px solid rgba(255,255,255,0.05)}
+.best-practices summary{font-size:1.2rem;cursor:pointer;color:#6c5ce7;font-weight:600;list-style:none;display:flex;align-items:center;gap:10px}
+.best-practices summary::-webkit-details-marker{display:none}
+.best-practices summary::before{content:'▶';font-size:0.8rem;transition:transform 0.2s}
+.best-practices[open] summary::before{transform:rotate(90deg)}
+.best-practices .content{margin-top:20px}
+.best-practices h3{font-size:0.95rem;margin:18px 0 8px 0;color:#a855f7}
+.best-practices p,.best-practices li{font-size:0.8rem;color:#aaa;line-height:1.6}
+.best-practices ul{margin-left:18px;margin-bottom:12px}
+.best-practices .tip{background:rgba(108,92,231,0.1);padding:10px 12px;border-radius:8px;margin:8px 0;border-left:3px solid #6c5ce7;font-size:0.8rem}
 footer{text-align:center;padding:25px 0;color:#555;border-top:1px solid rgba(255,255,255,0.1);margin-top:25px;font-size:0.8rem}
 @media(max-width:900px){.top-kpis,.trends-section,.markets,.traffic-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.top-kpis{grid-template-columns:repeat(2,1fr)}.kpi-grid{grid-template-columns:repeat(2,1fr)}}
@@ -240,9 +251,107 @@ footer{text-align:center;padding:25px 0;color:#555;border-top:1px solid rgba(255
 </div>
 </div>
 
+<!-- Best Practices Guide -->
+<div class="sortable-section" data-id="best-practices">
+<div class="drag-handle">⋮⋮</div>
+<details class="best-practices">
+<summary>📚 Dashboard Best Practices Guide</summary>
+<div class="content">
+<p>Reference this guide to get maximum value from your analytics.</p>
+
+<h3>1. 🎯 Hierarchy of Metrics</h3>
+<ul>
+<li><strong>North Star metric</strong> at the top (Revenue YoY growth)</li>
+<li>Supporting metrics below (CVR, AOV, Sessions)</li>
+<li>Don't give everything equal weight — focus on what drives the business</li>
+</ul>
+
+<h3>2. ⚡ Actionable Alerts, Not Just Data</h3>
+<ul>
+<li>"Revenue down 15%" is just data</li>
+<li>"Revenue down 15% — Paid Social CPM up 40%, check Meta Ads" is actionable</li>
+<li>Smart dashboards tell you WHAT to do, not just what happened</li>
+</ul>
+
+<h3>3. 🔍 Segmentation</h3>
+<ul>
+<li>Don't just look at totals — break down by:
+  <ul>
+    <li>New vs Returning customers (returning converts 3x better!)</li>
+    <li>Traffic source (which channel is underperforming?)</li>
+    <li>Device (mobile vs desktop)</li>
+    <li>Product category</li>
+  </ul>
+</li>
+<li><strong>Problems hide in averages</strong> — always dig deeper</li>
+</ul>
+
+<h3>4. 📈 Leading vs Lagging Indicators</h3>
+<ul>
+<li><strong>Lagging:</strong> Revenue, Orders (already happened, can't change)</li>
+<li><strong>Leading:</strong> Add-to-cart rate, Traffic, Email signups (predict future)</li>
+<li>Track both — leading indicators warn you BEFORE revenue drops</li>
+</ul>
+<div class="tip">⚠️ Your leading indicators (add-to-cart, checkout) aren't tracked yet. Priority: ask devs to implement.</div>
+
+<h3>5. 👥 Cohort Analysis</h3>
+<ul>
+<li>How do January customers behave vs December customers?</li>
+<li>Customer lifetime value by acquisition month</li>
+<li>Retention curves — are customers coming back?</li>
+</ul>
+
+<h3>6. 🎯 Goals & Targets</h3>
+<ul>
+<li>Always show actual vs target</li>
+<li>"1.2% CVR" means nothing without context</li>
+<li>"1.2% CVR (target: 2.0%)" tells you there's a problem to solve</li>
+</ul>
+<div class="tip">Current targets: CVR 2.0% • AOV 220 BGN • Daily Revenue 40.0K BGN • Daily Orders 180</div>
+
+<h3>7. 📝 Annotations</h3>
+<ul>
+<li>Mark when you launched campaigns, changed prices, had a sale</li>
+<li>Explains spikes/drops without guessing</li>
+<li>Future you will thank present you</li>
+</ul>
+
+<h3>8. 👁️ Different Views for Different Decisions</h3>
+<ul>
+<li><strong>Daily ops:</strong> Yesterday, anomalies, urgent issues</li>
+<li><strong>Weekly review:</strong> WoW trends, what to optimize this week</li>
+<li><strong>Monthly/Board:</strong> YoY growth, strategic picture</li>
+</ul>
+
+<h3>9. ⏱️ Data Freshness</h3>
+<ul>
+<li>Update frequency matters for different decisions</li>
+<li>Real-time for operations, daily for strategy</li>
+<li>Always show "last updated" timestamp (top of this dashboard)</li>
+</ul>
+
+<h3>10. 📊 One Source of Truth</h3>
+<ul>
+<li>Everyone looks at the same dashboard</li>
+<li>No conflicting spreadsheets floating around</li>
+<li>All decisions based on the same numbers</li>
+</ul>
+
+<h3>🚀 Coming Soon</h3>
+<ul>
+<li><strong>Meta Ads integration</strong> — Spend, ROAS, CPA alongside revenue</li>
+<li><strong>TikTok Ads integration</strong> — Same metrics for TikTok</li>
+<li><strong>Profit view</strong> — Revenue minus Ad Spend = actual profit</li>
+<li><strong>Inventory data</strong> — Stock levels, best sellers</li>
+<li><strong>Full P&L</strong> — Complete financial picture</li>
+</ul>
+</div>
+</details>
+</div>
+
 </div><!-- /sortable-container -->
 
-<footer>👗 Alessa Command Center v7 • Built with 💜 by Nova<br><span style="color:#666;font-size:0.75rem">Drag sections with 🔧 Edit Layout button</span></footer>
+<footer>👗 Alessa Command Center v8 • Built with 💜 by Nova<br><span style="color:#666;font-size:0.75rem">Drag sections with 🔧 Edit Layout button</span></footer>
 </div>
 
 <script>
